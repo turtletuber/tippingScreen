@@ -50,10 +50,10 @@ body {
         width: 100%;
     }
 
-    @media only screen and (orientation: landscape) {
+    @media only screen and (max-width: 600px) and (orientation: portrait) {
         .tip-button, .no-thank-you-button {
-            width: 48%; /* Adjust the percentage as needed for landscape mode */
-            max-width: none; /* Remove the maximum width */
+            width: 80%; /* Adjust the percentage for portrait mode */
+            max-width: 300px; /* Set the maximum width for portrait mode */
         }
     }
 }
