@@ -49,4 +49,11 @@ body {
     .tip-button, .no-thank-you-button {
         width: 100%;
     }
+
+    @media only screen and (orientation: landscape) {
+        .tip-button, .no-thank-you-button {
+            width: 48%; /* Adjust the percentage as needed for landscape mode */
+            max-width: none; /* Remove the maximum width */
+        }
+    }
 }
