@@ -4,64 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipping Screen</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .tip-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tip-button, .no-thank-you-button {
-            display: inline-block;
-            padding: 15px 20px; /* 20px padding around the text */
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600; /* Semi-bold font */
-            width: 80%; /* Make buttons fill 80% of the screen width */
-            max-width: 300px; /* Set a maximum width for the buttons */
-        }
-
-        .tip-button {
-            background-color: #0069fe; /* Updated button color for tips */
-            color: #fff;
-        }
-
-        .no-thank-you-button {
-            background-color: #e0e0e0; /* Button color for "No thank you..." */
-            color: #333; /* Text color for "No thank you..." */
-            width: 100%; /* Full width for "No thank you..." button */
-        }
-
-        #check-mark {
-            display: none;
-            color: green;
-            font-size: 80px; /* Larger check mark */
-            margin-top: 20px;
-            opacity: 0;
-            transform: scale(0);
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        /* Mobile responsiveness */
-        @media only screen and (max-width: 600px) {
-            .tip-button, .no-thank-you-button {
-                width: 100%; /* Full width on mobile devices */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Would you like to tip?</h1>
@@ -78,58 +21,46 @@
 
     <script>
         function showConfirmation(percentage) {
-            // Hide all buttons
             var buttons = document.querySelectorAll('.tip-button, .no-thank-you-button');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].style.display = 'none';
             }
 
-            // Show check mark and confirmation message with animation
             var checkMark = document.getElementById('check-mark');
             checkMark.style.display = 'block';
             checkMark.style.opacity = '1';
             checkMark.style.transform = 'scale(1)';
 
             setTimeout(function () {
-                // Hide check mark after 2 seconds
                 checkMark.style.opacity = '0';
                 checkMark.style.transform = 'scale(0)';
-
-                // Show buttons again
                 for (var i = 0; i < buttons.length; i++) {
                     buttons[i].style.display = 'inline-block';
                 }
             }, 2000);
 
-            // You can handle the tip percentage here as needed, for example, send it to a server.
             console.log('Tip percentage: ' + percentage + '%');
         }
 
         function showNoThankYou() {
-            // Hide all buttons
             var buttons = document.querySelectorAll('.tip-button, .no-thank-you-button');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].style.display = 'none';
             }
 
-            // Show check mark and confirmation message with animation
             var checkMark = document.getElementById('check-mark');
             checkMark.style.display = 'block';
             checkMark.style.opacity = '1';
             checkMark.style.transform = 'scale(1)';
 
             setTimeout(function () {
-                // Hide check mark after 2 seconds
                 checkMark.style.opacity = '0';
                 checkMark.style.transform = 'scale(0)';
-
-                // Show buttons again
                 for (var i = 0; i < buttons.length; i++) {
                     buttons[i].style.display = 'inline-block';
                 }
             }, 2000);
 
-            // Handle "No thank you..." action
             console.log('No thank you...');
         }
     </script>

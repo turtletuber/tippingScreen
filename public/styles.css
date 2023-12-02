@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+.tip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tip-button, .no-thank-you-button {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 80%;
+    max-width: 300px;
+}
+
+.tip-button {
+    background-color: #0069fe;
+    color: #fff;
+}
+
+.no-thank-you-button {
+    background-color: #e0e0e0;
+    color: #333;
+    width: 100%;
+}
+
+#check-mark {
+    display: none;
+    color: green;
+    font-size: 80px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+    .tip-button, .no-thank-you-button {
+        width: 100%;
+    }
+}
